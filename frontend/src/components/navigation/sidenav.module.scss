@@ -1,0 +1,117 @@
+$darkblue: #000b34;
+$blue: #13046b;
+$faded-white: #FAFAFC;
+$dark-grey: #E5E5E7;
+$yellow: #EFB05A;
+
+$sidebar-width: 300px;
+
+.sidebar {
+  width: $sidebar-width;
+  background-image: linear-gradient(
+    $darkblue,
+    $blue,
+  );
+  background-size: 200%;
+  background-position: 0 100%;
+  position: absolute;
+  height: 100%;
+  width: 70px;
+  transition: 300ms ease-in-out;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  
+  &__expanded {
+    background-size: 100%;
+    background-position: 0 0;
+    width: 300px;
+  }
+  
+  &:hover {
+    background-position: 0 0;
+  }
+}
+
+.animationContainer{
+  position: absolute;
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+}
+
+.sidebar__toggle {
+  width: 300p;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1.8rem;
+  padding-bottom: 0;
+  transition: 300ms ease;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient($yellow 80%, transparent);
+  height: 40vw;
+  width: 40vw;
+  border-radius: 100%;
+  margin-left: -100px;
+  margin-top: -20px;
+  z-index: -1;
+  opacity: 0;
+  transform: scale(.4) translateY(-100px) translateX(200px);
+  margin-left: 0;
+  margin-top: 0;
+  transition: 400ms ease;
+  
+  &:nth-child(2) {
+    background: linear-gradient( #FF7DD5 80%, transparent);
+    margin-top: 70px;
+    margin-left: 50px;
+    transform: scale(.4) translateY(-400px);
+    margin-top: 0;
+  }
+  
+  .sidebar__expanded & {
+    animation: float 18s infinite alternate;
+    margin-left: -100px;
+    margin-top: -20px;
+    opacity: .4;
+    transform: scale(1) translateY(0);
+    
+    &:nth-child(2) {
+    animation: float 36s infinite alternate;
+      transform: scale(1) translateY(100px) translateX(150px);
+    }
+  }
+}
+
+@keyframes float {
+  20% {
+    top: 100px;
+    left: -50px;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    top: 500px;
+    left: -50px;
+  }
+}

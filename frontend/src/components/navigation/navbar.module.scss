@@ -1,0 +1,32 @@
+$darkblue: #000b34;
+$blue: #13046b;
+$faded-white: #FAFAFC;
+$dark-grey: #E5E5E7;
+$yellow: #EFB05A;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    background-image: linear-gradient( to right,
+    $darkblue 25%,
+        $blue 
+      );
+    color: white;
+    font-family: Helvetica;
+    font-weight: 300;
+}
+
+.navbar__title {
+    margin-right: auto;
+    font-size: 150%;
+    padding: 12px 16px;
+}
+
+.navbar__item {
+    padding: 16px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    vertical-align: middle;
+}
