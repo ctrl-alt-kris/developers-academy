@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
+import CourseOverview from "./components/pages/CourseOverview";
 import Login from "./components/pages/Login";
 import { AuthContextProvider } from "./components/context/AuthContext";
 import Signup from "./components/pages/Signup";
@@ -18,6 +19,7 @@ function App() {
           <div className={styles.scrollable}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="overview/:courseId" element={<CourseOverview />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
             </Routes>
