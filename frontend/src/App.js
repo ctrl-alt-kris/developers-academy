@@ -20,10 +20,12 @@ function App() {
           <div className={styles.scrollable}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="overview/:courseId" element={<CourseOverview />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
-              <Route path="profile" element={<Profile />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path="overview/:courseId" element={<CourseOverview />} />
+                <Route path="profile" element={<Profile />} />
+              </Route>
             </Routes>
           </div>
         </div>
