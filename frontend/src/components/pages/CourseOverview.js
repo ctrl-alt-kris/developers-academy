@@ -5,6 +5,7 @@ import styles from './home.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 import Card from '../ui/Card';
 
 const CourseOverview = () => {
