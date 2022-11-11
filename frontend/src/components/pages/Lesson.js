@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const Lesson = () => {
   const { user } = UserAuth();
+  const [lessonData, setLessonData] = useState();
 
   const { courseId, lessonId } = useParams();
 
@@ -14,14 +15,19 @@ const Lesson = () => {
     const getLesson = async () => {
       const docRef = doc(db, 'courses', courseId, 'lessons', lessonId);
       const data = await getDoc(docRef);
-      console.log(data.data());
+      setLessonData(data.data());
     };
 
     getLesson();
   }, []);
 
+  console.log(lessonData);
   if (user) {
-    return <div className={styles.content}>lesson</div>;
+    return (
+      <div>
+        <h1>{lessonData.name}</h1>
+      </div>
+    );
   }
 };
 
