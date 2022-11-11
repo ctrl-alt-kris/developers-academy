@@ -1,19 +1,26 @@
-import { UserAuth } from "../context/AuthContext";
-import { db } from "../../firebase-config";
-import { getDocs, collection } from "firebase/firestore";
-import styles from "./home.module.scss";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Card from "../ui/Card";
+import { UserAuth } from '../context/AuthContext';
+import { db } from '../../firebase-config';
+import { getDocs, collection } from 'firebase/firestore';
+import styles from './home.module.scss';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Card from '../ui/Card';
 
 const CourseOverview = () => {
   const [lessons, setLessons] = useState([]);
   const { courseId } = useParams();
   const { user, userInfo } = UserAuth();
 
+  const navigate = useNavigate();
+
+  const clickedCourse = (courseId) => {
+    navigate(`lesson/${courseId}`);
+  };
+
   useEffect(() => {
     const getLessons = async () => {
-      const docRef = collection(db, "courses", courseId, "lessons");
+      const docRef = collection(db, 'courses', courseId, 'lessons');
       const data = await getDocs(docRef);
       let parsedData = [];
       data.forEach((doc) => {
@@ -32,7 +39,7 @@ const CourseOverview = () => {
       <div className={styles.content}>
         {lessons &&
           lessons.map((lesson) => {
-            return Card(lesson);
+            return Card(lesson, clickedCourse);
           })}
       </div>
     );

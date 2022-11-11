@@ -1,6 +1,5 @@
-import styles from "./card.module.scss";
-import { Navigate } from "react-router-dom";
-import { useState } from "react";
+import styles from './card.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Card = (course, clickedCourse) => {
   return (

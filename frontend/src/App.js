@@ -8,6 +8,7 @@ import NavBar from './components/navigation/NavBar';
 import SideNav from './components/navigation/SideNav';
 import Profile from './components/pages/Profile';
 import ProtectedRoute from './components/auth/ProtectedRoute';
+import Lesson from './components/pages/Lesson';
 import styles from './app.module.scss';
 function App() {
   //to make a route only available to logged in users, wrap it in ProtectedRoute
@@ -24,6 +25,10 @@ function App() {
               <Route path="signup" element={<Signup />} />
               <Route element={<ProtectedRoute />}>
                 <Route path="overview/:courseId" element={<CourseOverview />} />
+                <Route
+                  path="overview/:courseId/lesson/:lessonId"
+                  element={<Lesson />}
+                />
                 <Route path="profile" element={<Profile />} />
               </Route>
             </Routes>
