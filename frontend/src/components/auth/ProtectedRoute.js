@@ -1,5 +1,5 @@
-import { Navigate } from "react-router-dom";
-import { UserAuth } from "../context/AuthContext";
+import { Navigate, Outlet } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ children }) => {
   const { user } = UserAuth();
@@ -8,6 +8,6 @@ const ProtectedRoute = ({ children }) => {
     return <Navigate to="/login" />;
   }
 
-  return children;
+  return <Outlet />;
 };
 export default ProtectedRoute;

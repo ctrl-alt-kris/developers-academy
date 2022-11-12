@@ -1,6 +1,6 @@
-import { useNavigate, Link } from "react-router-dom";
-import { UserAuth } from "../context/AuthContext";
-import styles from "./navbar.module.scss";
+import { useNavigate, Link } from 'react-router-dom';
+import { UserAuth } from '../context/AuthContext';
+import styles from './navbar.module.scss';
 const NavBar = () => {
   const { user, userInfo, logout } = UserAuth();
 
@@ -9,10 +9,14 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate("/");
+      navigate('/');
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  const goToProfile = () => {
+    navigate('/profile');
   };
   return (
     <header className={styles.navbar}>
@@ -31,7 +35,7 @@ const NavBar = () => {
       )}
       {user && (
         <>
-          <div className={styles.navbar__item}>
+          <div onClick={goToProfile} className={styles.navbar__item}>
             {userInfo.firstName} {userInfo.lastName}
           </div>
           <div onClick={handleLogout} className={styles.navbar__item}>
