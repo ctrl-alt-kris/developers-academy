@@ -6,8 +6,10 @@ import { AuthContextProvider } from "./components/context/AuthContext";
 import Signup from "./components/pages/Signup";
 import NavBar from "./components/navigation/NavBar";
 import SideNav from "./components/navigation/SideNav";
+import Course from "./components/pages/Course";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import styles from "./app.module.scss";
+
 function App() {
   //to make a route only available to logged in users, wrap it in ProtectedRoute
   return (
@@ -19,9 +21,10 @@ function App() {
           <div className={styles.scrollable}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="overview/:courseId" element={<CourseOverview />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
+              <Route path="overview/:courseId" element={<CourseOverview />} />
+              <Route path="course/:courseId" element={<Course />} />
             </Routes>
           </div>
         </div>
