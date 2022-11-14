@@ -1,12 +1,12 @@
-import { UserAuth } from '../context/AuthContext';
-import { db } from '../../firebase-config';
-import { getDocs, collection } from 'firebase/firestore';
-import styles from './home.module.scss';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { UserAuth } from "../context/AuthContext";
+import { db } from "../../firebase-config";
+import { getDocs, collection } from "firebase/firestore";
+import styles from "./home.module.scss";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-import Card from '../ui/Card';
+import Card from "../ui/Card";
 
 const CourseOverview = () => {
   const [lessons, setLessons] = useState([]);
@@ -16,12 +16,12 @@ const CourseOverview = () => {
   const navigate = useNavigate();
 
   const clickedCourse = (courseId) => {
-    navigate(`lesson/${courseId}`);
+    navigate(`/course/${courseId}`);
   };
 
   useEffect(() => {
     const getLessons = async () => {
-      const docRef = collection(db, 'courses', courseId, 'lessons');
+      const docRef = collection(db, "courses", courseId, "lessons");
       const data = await getDocs(docRef);
       let parsedData = [];
       data.forEach((doc) => {

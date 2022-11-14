@@ -8,10 +8,7 @@ const Card = (course, clickedCourse) => {
       className={styles.card}
       onClick={() => clickedCourse(course.id)}
     >
-      <img
-        className={styles.card_image}
-        src="https://i.redd.it/b3esnz5ra34y.jpg"
-      />
+      <img className={styles.card_image} src={course.image} />
 
       <div className={styles.card_title}>
         <p>{course.name}</p>

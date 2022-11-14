@@ -1,15 +1,15 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from './components/pages/Home';
-import CourseOverview from './components/pages/CourseOverview';
-import Login from './components/pages/Login';
-import { AuthContextProvider } from './components/context/AuthContext';
-import Signup from './components/pages/Signup';
-import NavBar from './components/navigation/NavBar';
-import SideNav from './components/navigation/SideNav';
-import Profile from './components/pages/Profile';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import Lesson from './components/pages/Lesson';
-import styles from './app.module.scss';
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/pages/Home";
+import CourseOverview from "./components/pages/CourseOverview";
+import Login from "./components/pages/Login";
+import { AuthContextProvider } from "./components/context/AuthContext";
+import Signup from "./components/pages/Signup";
+import NavBar from "./components/navigation/NavBar";
+import SideNav from "./components/navigation/SideNav";
+import Profile from "./components/pages/Profile";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import Lesson from "./components/pages/Lesson";
+import styles from "./app.module.scss";
 function App() {
   //to make a route only available to logged in users, wrap it in ProtectedRoute
   return (
@@ -23,14 +23,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
-              <Route element={<ProtectedRoute />}>
-                <Route path="overview/:courseId" element={<CourseOverview />} />
-                <Route
-                  path="overview/:courseId/lesson/:lessonId"
-                  element={<Lesson />}
-                />
-                <Route path="profile" element={<Profile />} />
-              </Route>
+              <Route path="overview/:courseId" element={<CourseOverview />} />
+              <Route path="course/:courseId" element={<Course />} />
             </Routes>
           </div>
         </div>
