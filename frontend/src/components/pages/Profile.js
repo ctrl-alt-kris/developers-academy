@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { UserAuth } from '../context/AuthContext';
-import EditableField from '../ui/EditableField';
-import styles from './profile.module.scss';
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+import Card from "../ui/Card";
+import EditableField from "../ui/EditableField";
+import styles from "./profile.module.scss";
 const Profile = () => {
   const { user, userInfo } = UserAuth();
   const [name, setName] = useState(userInfo.firstName);
@@ -13,7 +14,7 @@ const Profile = () => {
   console.log(name, lastName, email);
 
   return (
-    <>
+    <div className={styles.profile}>
       <EditableField
         fieldName="first name"
         value={name}
@@ -29,7 +30,7 @@ const Profile = () => {
         value={email}
         setValue={setEmail}
       ></EditableField>
-    </>
+    </div>
   );
 };
 

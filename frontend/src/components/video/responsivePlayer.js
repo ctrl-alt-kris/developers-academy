@@ -7,9 +7,9 @@ const ResponsivePlayer = (props) => {
     <div className={`${styles.playerWrapper}`}>
       <ReactPlayer
         className={`${styles.reactPlayer}`}
-        url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-        width="100%"
-        height="100%"
+        url={props.url}
+        width="60%"
+        height="60%"
         controls={true}
         onProgress={(played) => {
           props.onProgress(played);

@@ -1,5 +1,4 @@
-import styles from './card.module.scss';
-import { useNavigate } from 'react-router-dom';
+import styles from "./card.module.scss";
 
 const Card = (course, clickedCourse) => {
   return (

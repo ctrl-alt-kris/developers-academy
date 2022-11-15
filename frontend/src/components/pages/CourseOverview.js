@@ -15,8 +15,8 @@ const CourseOverview = () => {
 
   const navigate = useNavigate();
 
-  const clickedCourse = (courseId) => {
-    navigate(`/course/${courseId}`);
+  const clickedCourse = (lessonId) => {
+    navigate(`/course/${courseId}/${lessonId}`);
   };
 
   useEffect(() => {
