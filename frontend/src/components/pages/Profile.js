@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
+import Button from '../ui/Button';
 import EditableField from '../ui/EditableField';
 import styles from './profile.module.scss';
 const Profile = () => {
@@ -29,6 +30,7 @@ const Profile = () => {
         value={email}
         setValue={setEmail}
       ></EditableField>
+      <Button text={'Submit'} />
     </>
   );
 };

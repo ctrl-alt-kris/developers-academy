@@ -1,17 +1,15 @@
 $darkblue: #000b34;
 $blue: #13046b;
-$faded-white: #FAFAFC;
-$dark-grey: #E5E5E7;
-$yellow: #EFB05A;
+$faded-white: #fafafc;
+$dark-grey: #e5e5e7;
+$yellow: #efb05a;
 
 $sidebar-width: 300px;
 
 .sidebar {
   width: $sidebar-width;
-  background-image: linear-gradient(
-    $darkblue,
-    $blue,
-  );
+  padding-top: 0.1rem;
+  background-image: linear-gradient($darkblue, $blue);
   background-size: 200%;
   background-position: 0 100%;
   position: absolute;
@@ -21,19 +19,19 @@ $sidebar-width: 300px;
   z-index: 10;
   overflow: hidden;
   cursor: pointer;
-  
+
   &__expanded {
     background-size: 100%;
     background-position: 0 0;
     width: 300px;
   }
-  
+
   &:hover {
     background-position: 0 0;
   }
 }
 
-.animationContainer{
+.animationContainer {
   position: absolute;
   overflow: hidden;
   width: inherit;
@@ -57,7 +55,7 @@ $sidebar-width: 300px;
   padding-bottom: 0;
   transition: 300ms ease;
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
   }
@@ -75,28 +73,28 @@ $sidebar-width: 300px;
   margin-top: -20px;
   z-index: -1;
   opacity: 0;
-  transform: scale(.4) translateY(-100px) translateX(200px);
+  transform: scale(0.4) translateY(-100px) translateX(200px);
   margin-left: 0;
   margin-top: 0;
   transition: 400ms ease;
-  
+
   &:nth-child(2) {
-    background: linear-gradient( #FF7DD5 80%, transparent);
+    background: linear-gradient(#ff7dd5 80%, transparent);
     margin-top: 70px;
     margin-left: 50px;
-    transform: scale(.4) translateY(-400px);
+    transform: scale(0.4) translateY(-400px);
     margin-top: 0;
   }
-  
+
   .sidebar__expanded & {
     animation: float 18s infinite alternate;
     margin-left: -100px;
     margin-top: -20px;
-    opacity: .4;
+    opacity: 0.4;
     transform: scale(1) translateY(0);
-    
+
     &:nth-child(2) {
-    animation: float 36s infinite alternate;
+      animation: float 36s infinite alternate;
       transform: scale(1) translateY(100px) translateX(150px);
     }
   }

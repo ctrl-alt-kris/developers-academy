@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { UserAuth } from "../context/AuthContext";
-import styles from "./sidenav.module.scss";
+import { useState } from 'react';
+import { UserAuth } from '../context/AuthContext';
+import MenuItems from './MenuItems';
+import styles from './sidenav.module.scss';
 
 const SideNav = () => {
   const [expanded, setExpanded] = useState(false);
@@ -22,6 +23,7 @@ const SideNav = () => {
           setExpanded(false);
         }}
       >
+        <MenuItems expanded={expanded} />
         {/* animated shapes in the menu */}
         <div className={styles.animationContainer}>
           <div className={`${styles.shape}`}></div>
