@@ -24,7 +24,7 @@ const Login = () => {
     }
   };
   return (
-    <Card>
+    <div>
       <h3>Login</h3>
 
       <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
@@ -36,7 +36,7 @@ const Login = () => {
       />
 
       <button onClick={handleSubmit}>Login</button>
-    </Card>
+    </div>
   );
 };
 
