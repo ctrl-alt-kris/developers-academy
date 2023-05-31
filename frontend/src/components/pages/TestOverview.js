@@ -1,7 +1,7 @@
 import { UserAuth } from "../context/AuthContext";
 import { db } from "../../firebase-config";
 import { getDocs, collection } from "firebase/firestore";
-import styles from "./CourseOverview.module.scss";
+import styles from "./home.module.scss";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -37,12 +37,12 @@ const CourseOverview = () => {
 
   if (user) {
     return (
-      <section className={styles.content}>
+      <div className={styles.content}>
         {lessons &&
           lessons.map((lesson) => {
             return Card(lesson, clickedCourse);
           })}
-      </section>
+      </div>
     );
   }
 };

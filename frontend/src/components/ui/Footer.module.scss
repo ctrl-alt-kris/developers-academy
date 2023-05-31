@@ -1,0 +1,21 @@
+$darkblue: #000b34;
+$blue: #13046b;
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    background-image: linear-gradient( to right,
+    $blue 25%,
+        $darkblue 
+      );
+    color: #fff;
+    height: 3vh;
+    padding: 1vh 0;
+    width: 100vw;
+  }
+  
+.text {
+    margin: auto 0 auto 0;
+    padding-right: 5px;
+    text-align: end;
+}
