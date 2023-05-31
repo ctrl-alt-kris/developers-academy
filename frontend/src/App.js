@@ -7,11 +7,10 @@ import Signup from "./components/pages/Signup";
 import NavBar from "./components/navigation/NavBar";
 import SideNav from "./components/navigation/SideNav";
 import Profile from "./components/pages/Profile";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 import Course from "./components/pages/Course";
-import Footer from "./components/ui/Footer";
 import styles from "./app.module.scss";
 function App() {
-  //to make a route only available to logged in users, wrap it in ProtectedRoute
   return (
     <AuthContextProvider>
       <div className={styles.non_scrollable}>
@@ -25,7 +24,8 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
               <Route path="overview/:courseId" element={<CourseOverview />} />
-              <Route path="course/:courseId/:lessonId" element={<Course />} />
+              <Route path="course/:courseId" element={<Course />} />
+              <Route path="profile" element={<Profile />} />
             </Routes>
           </div>
         </div>
