@@ -24,12 +24,11 @@ function App() {
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />
               <Route path="overview/:courseId" element={<CourseOverview />} />
-              <Route path="course/:courseId" element={<Course />} />
+              <Route path="course/:courseId/:lessonId" element={<Course />} />
               <Route path="profile" element={<Profile />} />
             </Routes>
           </div>
         </div>
-        <Footer />
       </div>
     </AuthContextProvider>
   );
