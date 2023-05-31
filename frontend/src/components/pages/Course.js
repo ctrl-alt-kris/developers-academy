@@ -8,7 +8,7 @@ import { addDoc, collection, doc, setDoc, getDoc } from "firebase/firestore";
 const Course = () => {
   const { user } = UserAuth();
   const [progress, setProgress] = useState();
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState("");
 
   let { courseId, lessonId } = useParams();
 
@@ -17,6 +17,7 @@ const Course = () => {
       const docRef = doc(db, "courses", courseId, "lessons", lessonId);
       const data = await getDoc(docRef);
       console.log(data.data());
+      setUrl(data.data().url);
     };
 
     getLesson();

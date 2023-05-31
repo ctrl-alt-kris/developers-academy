@@ -8,15 +8,9 @@ const ResponsivePlayer = (props) => {
       <ReactPlayer
         className={`${styles.reactPlayer}`}
         url={props.url}
-        width="60%"
-        height="60%"
+        width="100%"
+        height="90%"
         controls={true}
-        onProgress={(played) => {
-          props.onProgress(played);
-        }}
-        onPause={(played) => {
-          props.onPause(played);
-        }}
       />
     </div>
   );

@@ -8,6 +8,7 @@ import NavBar from "./components/navigation/NavBar";
 import SideNav from "./components/navigation/SideNav";
 import Profile from "./components/pages/Profile";
 import Course from "./components/pages/Course";
+import Footer from "./components/ui/Footer";
 import styles from "./app.module.scss";
 function App() {
   //to make a route only available to logged in users, wrap it in ProtectedRoute
@@ -28,6 +29,7 @@ function App() {
             </Routes>
           </div>
         </div>
+        <Footer />
       </div>
     </AuthContextProvider>
   );
